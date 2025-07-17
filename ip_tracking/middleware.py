@@ -1,6 +1,8 @@
+from django.http import HttpResponseForbidden
 from .models import RequestLog, BlockedIP
 from django.utils.timezone import now
-from django.http import HttpResponseForbidden
+from django.core.cache import cache
+import os
 
 class IPTrackingMiddleware:
     def __init__(self, get_response):
