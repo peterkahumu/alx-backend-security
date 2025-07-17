@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+RATELIMIT_USE_CACHE = 'default'
 
 
 # Application definition
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
 
     'ip_tracking',
     'django_celery_beat',
+    'ratelimit',
 ]
 
 MIDDLEWARE = [
